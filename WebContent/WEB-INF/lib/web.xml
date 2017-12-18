@@ -5,11 +5,11 @@
     xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
     http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
   <servlet>
-    <servlet-name>Dictionary</servlet-name>
-    <servlet-class>DictionaryServiceImpl</servlet-class>
+    <servlet-name>DictionaryServlet</servlet-name>
+    <servlet-class>DictionaryServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Dictionary</servlet-name>
+    <servlet-name>DictionaryServlet</servlet-name>
     <url-pattern>/DictionaryServlet</url-pattern>
   </servlet-mapping>
 </web-app>
