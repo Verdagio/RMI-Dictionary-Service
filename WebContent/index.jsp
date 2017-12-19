@@ -4,14 +4,18 @@
 	"http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
+	
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<title> DS Assignment</title>
 	</head>	
 	<body>		
-		<form action="DictionaryServlet">			
-			 Please Enter a Word<br>
-			<input type="text" name="color"size="20px">
-			<input type="submit" value="submit">						
-		</form>		
+		<form action="DictionaryServlet" method="post">			
+			 <h1>Please Enter a Word</h1><br>
+			<input type="text" name="word"size="20px">
+			<input type="submit" value="submit"><br>			
+		</form>	
+		<form action="DictionaryServlet" method="get">
+			<h2>${message}</h2>
+		</form>
 	</body>	
 </html>

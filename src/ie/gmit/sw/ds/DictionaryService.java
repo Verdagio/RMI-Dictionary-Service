@@ -5,6 +5,6 @@ import java.rmi.RemoteException;
 
 public interface DictionaryService extends Remote{
 	
-	public String compare() throws RemoteException;
+	public String wordSearch(String s) throws RemoteException;
 	
 }
