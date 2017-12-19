@@ -15,16 +15,16 @@ public class InQueue implements Runnable {
 	}
 	
 	public void dispatch() {
-		int i =0;
+		int i = 10;
 		try {
 			do {
 			Thread.sleep(1000);
 			System.out.println(i);
-			i++;
-			} while(!w.onReadyState());
+			i--;
+			} while(!w.onReadyState() && i != 0);
 			
 			if(q.peek() != null) { // Check that there is actually something in the queue
-				System.out.println(q.poll().toString() + " dispatched");
+				System.out.println(q.peek().toString() + " dispatched");
 				w.receiveItem(q.poll().toString().toUpperCase()); // send the item to the worker
 			}
 			

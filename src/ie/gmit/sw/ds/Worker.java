@@ -1,9 +1,11 @@
 package ie.gmit.sw.ds;
 
+import java.util.Map;
+
 public class Worker {
 
 	private boolean isReady;
-	private DictionaryServiceImpl dsi;
+	
 	
 	public Worker() {
 		isReady = true;
@@ -13,13 +15,19 @@ public class Worker {
 		return isReady;
 	}
 	
-	public void receiveItem(String s) throws InterruptedException {
-
+	public Map<String, String> receiveItem(String word) throws InterruptedException {
+		
+		// set is ready to false
+		
+		// get the string being passed in and compare it against dictionary service remote object
+		
+		// create a temp object and store word & definition
+		
+		// return the key value pair from dictionary service
 		
 		
-		
-		
-	}
+		return null;
+	}//receive item
 	
 	
 }
