@@ -10,4 +10,5 @@ public interface DictionaryService extends Remote{
 	
 	public String wordSearch(String s) throws RemoteException;
 	public Map<String, String> populateDict() throws RemoteException, IOException;
+	public boolean isReadyState();
 }
