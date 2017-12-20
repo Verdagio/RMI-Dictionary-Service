@@ -1,33 +1,23 @@
 package ie.gmit.sw.ds;
 
-import java.util.Map;
+import java.rmi.Naming;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
 
 public class Worker {
-
-	private boolean isReady;
 	
+	public Worker() {}
 	
-	public Worker() {
-		isReady = true;
-	}
-	
-	public boolean onReadyState() {	
-		return isReady;
-	}
-	
-	public Map<String, String> receiveItem(String word) throws InterruptedException {
+	public static void main(String[]args) throws Exception{
 		
-		// set is ready to false
+		DictionaryService stub = new DictionaryServiceImpl("dictionary.txt");
 		
-		// get the string being passed in and compare it against dictionary service remote object
+		LocateRegistry.createRegistry(1099);
+		Naming.rebind("dictionaryService", stub);	
 		
-		// create a temp object and store word & definition
+		System.out.println("Server " +stub+" Ready");
 		
-		// return the key value pair from dictionary service
-		
-		
-		return null;
-	}//receive item
+	}//main
 	
 	
 }

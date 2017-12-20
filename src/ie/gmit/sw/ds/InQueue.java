@@ -1,5 +1,6 @@
 package ie.gmit.sw.ds;
 
+import java.rmi.Naming;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -15,20 +16,23 @@ public class InQueue implements Runnable {
 	}
 	
 	public void dispatch() {
-		int i = 10;
+		System.out.println("running. . .");
+
 		try {
-			do {
-			Thread.sleep(1000);
-			System.out.println(i);
-			i--;
-			} while(!w.onReadyState() && i != 0);
+
+			//Thread.sleep(10000);
 			
 			if(q.peek() != null) { // Check that there is actually something in the queue
-				System.out.println(q.peek().toString() + " dispatched");
-				w.receiveItem(q.poll().toString().toUpperCase()); // send the item to the worker
+				
+				DictionaryService ds = (DictionaryService) Naming.lookup("rmi://127.0.0.1:1099/dictionaryService");
+				System.out.println(ds.toString());
+				
+				
+				System.out.println(ds.wordSearch(q.poll().toUpperCase()));
+				System.out.println("dispatched");
 			}
 			
-		} catch (InterruptedException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -36,7 +40,7 @@ public class InQueue implements Runnable {
 	}
 	
 	public void run() {
-		System.out.println("running. . .");
 		dispatch();
+
 	}
 }
