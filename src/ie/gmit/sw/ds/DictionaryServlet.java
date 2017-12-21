@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/DictionaryServlet")
 public class DictionaryServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	InQueue r = null;
 
 	/**
 	 * Default constructor.
@@ -41,20 +42,22 @@ public class DictionaryServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		InQueue r = new InQueue(request.getParameter("word"));
-		new Thread(r).start();
+		if (r == null) {
+			r = new InQueue(request.getParameter("word")); // new instance of the thread
+			new Thread(r).start();									// start the thread
+		}else {
+			r.addToQueue(request.getParameter("word"));
+		}
 		
-		PrintWriter out = response.getWriter();		// for debugging...
-		//out.println(r.hashCode());				// double checking hashcode of thread (debugging)		
 		try {
-			Thread.sleep(1000);					// simulate a wait...?
-			String res = r.getResponse();			// get the response from our thread
-			//out.println(res.toString());			// checking res (debugging)
+			Thread.sleep(10000);									// give the thread time to do its thing
+			String res = r.getResponse();						// get the response from our thread
 			doGet(request, response, res);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}// try catch
+	
 	}// post
 
 

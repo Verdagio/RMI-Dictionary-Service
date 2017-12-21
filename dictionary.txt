@@ -4504,13 +4504,6 @@ Allottery, Allotment.
 Allowed, of Allow
 Allowing, of Allow
 Allow, To praise; to approve of; hence, to sanction.
-Allow, To like; to be suited or pleased with.
-Allow, To sanction; to invest; to intrust.
-Allow, To grant, give, admit, accord, afford, or yield; to let one have; as, to allow a servant his liberty; to allow a free passage; to allow one day for rest.
-Allow, To own or acknowledge; to accept as true; to concede; to accede to an opinion; as, to allow a right; to allow a claim; to allow the truth of a proposition.
-Allow, To grant (something) as a deduction or an addition; es to abate or deduct; as, to allow a sum for leakage.
-Allow, To grant license to; to permit; to consent to; as, to allow a son to be absent.
-Allow, To admit; to concede; to make allowance or abatement.
 Allowable, Praiseworthy; laudable.
 Allowable, Proper to be, or capable of being, allowed; permissible; admissible; not forbidden; not unlawful or improper; as, a certain degree of freedom is allowable among friends.
 Allowableness, The quality of being allowable; permissibleness; lawfulness; exemption from prohibition or impropriety.
@@ -4585,13 +4578,7 @@ Allwork, Domestic or other work of all kinds; as, a maid of allwork, that is, a 
 Allied, of Ally
 Allying, of Ally
 Ally, To unite, or form a connection between, as between families by marriage, or between princes and states by treaty, league, or confederacy; -- often followed by to or with.
-Ally, To connect or form a relation between by similitude, resemblance, friendship, or love.
 Allies, of Ally
-Ally, A relative; a kinsman.
-Ally, One united to another by treaty or league; -- usually applied to sovereigns or states; a confederate.
-Ally, Anything associated with another as a helper; an auxiliary.
-Ally, Anything akin to another by structure, etc.
-Ally, See Alley, a marble or taw.
 Allyl, An organic radical, C3H5, existing especially in oils of garlic and mustard.
 Allylene, A gaseous hydrocarbon, C3H4, homologous with acetylene; propine.
 Alma, Alt. of Almah
@@ -4625,9 +4612,6 @@ Almighty, Unlimited in might; omnipotent; all-powerful; irresistible.
 Almighty, Great; extreme; terrible.
 Almner, An almoner.
 Almond, The fruit of the almond tree.
-Almond, The tree that bears the fruit; almond tree.
-Almond, Anything shaped like an almond.
-Almond, One of the tonsils.
 Almond furnace, A kind of furnace used in refining, to separate the metal from cinders and other foreign matter.
 Almondine, See Almandine
 Almoner, One who distributes alms, es the doles and alms of religious houses, almshouses, etc.; also, one who dispenses alms for another, as the almoner of a prince, bishop, etc.

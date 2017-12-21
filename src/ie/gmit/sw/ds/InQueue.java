@@ -45,4 +45,9 @@ public class InQueue implements Runnable {
 	public void run() {
 		dispatch();
 	}
+
+	public void addToQueue(String parameter) {
+		q.add(parameter);
+		dispatch();
+	}
 }

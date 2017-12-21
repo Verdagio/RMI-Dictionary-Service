@@ -38,7 +38,7 @@ public class DictionaryServiceImpl extends UnicastRemoteObject implements Dictio
 		
 		populateDict();
 		
-		if(dict.containsKey(word.toLowerCase()) || dict.containsKey(word.toUpperCase())) {								// check if the dictionary contains our word
+		if(dict.containsKey(word.toUpperCase())) {								// check if the dictionary contains our word
 			result = "Word: " + word + "<br>Definition: " + dict.get(word);								// set the response
 		}// if 
 		else {
