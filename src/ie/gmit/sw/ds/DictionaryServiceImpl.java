@@ -15,37 +15,34 @@ public class DictionaryServiceImpl extends UnicastRemoteObject implements Dictio
 	private Map<String, String> dict;
 	private BufferedReader br;
 	private File file;
-	private boolean state;
 
 	public DictionaryServiceImpl(String filename) throws RemoteException {
 		dict = new HashMap<>();
 		file = new File(filename);
-		state = false;
-	}
+	}// construct
 
-	public Map<String, String> populateDict() throws RemoteException, IOException {
-		br = new BufferedReader(new FileReader(file));
+	public void populateDict() throws RemoteException, IOException {
+		br = new BufferedReader(new FileReader(file));				// read in the file
 		String line = null;
 		
-		// read each line of the dictionary and split on the comma populating the map
-		// with the key (word) value(definition)
-		while ((line = br.readLine()) != null) {
-			String[] el = line.split(",");
-			dict.put(el[0].toUpperCase(), el[1].toUpperCase());
+		while ((line = br.readLine()) != null) {					// whle the line is not null
+			String[] el = line.split(",");							// split from the ,
+			dict.put(el[0].toUpperCase(), el[1].toUpperCase());		// put the elements into the dictionary key / value
 
-			System.out.println(line);
-		}//while
-		// dictionary is ready
-		state = true;
-		return dict;
-	}
+			//System.out.println(line);								// just checking
+		}//while		
+	}// pop dict
 
-	public boolean isReadyState() {
-		return state;
-	}
+	public String wordSearch(String word) throws RemoteException, IOException {
+		String result = "";											// the result which will be our response
+		
+		populateDict();
+		
+		if(dict.containsKey(word)) {								// check if the dictionary contains our word
+			result = dict.get(word);								// set the response
+		}// if 
+		return "Word: " + word + "\nDefinition: " + result;			// send the response back to InQueue.dispatch()
+	}// wordSearch
+	
 
-	public String wordSearch(String word) throws RemoteException {
-
-		return " hi " + word;
-	}
-}
+}//class
