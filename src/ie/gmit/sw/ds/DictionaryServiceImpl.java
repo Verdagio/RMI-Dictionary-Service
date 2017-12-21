@@ -38,10 +38,13 @@ public class DictionaryServiceImpl extends UnicastRemoteObject implements Dictio
 		
 		populateDict();
 		
-		if(dict.containsKey(word)) {								// check if the dictionary contains our word
+		if(dict.containsKey(word.toLowerCase()) || dict.containsKey(word.toUpperCase())) {								// check if the dictionary contains our word
 			result = dict.get(word);								// set the response
 		}// if 
-		return "Word: " + word + "\nDefinition: " + result;			// send the response back to InQueue.dispatch()
+		else {
+			result = "definition not found";
+		}
+		return "Word: " + word + ", Definition: " + result;			// send the response back to InQueue.dispatch()
 	}// wordSearch
 	
 

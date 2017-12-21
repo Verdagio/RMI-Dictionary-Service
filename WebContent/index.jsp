@@ -15,7 +15,8 @@
 			<input type="submit" value="submit"><br>			
 		</form>	
 		<form action="DictionaryServlet" method="get">
-			<h2>${message}</h2>
+			<h2>Result:</h2>
+			<h3><%= request.getParameter("message") %></h3>
 		</form>
 	</body>	
 </html>

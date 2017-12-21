@@ -28,7 +28,6 @@ public class InQueue implements Runnable {
 				System.out.println("Dispatching job to remote object");
 				this.response = ds.wordSearch(q.poll().toUpperCase()); // get the response
 				System.out.println(response); // checking what the result is here
-				System.out.println(getResponse());
 			} else {
 				System.out.println("Que empty... ");
 			} // if else the queue is populated

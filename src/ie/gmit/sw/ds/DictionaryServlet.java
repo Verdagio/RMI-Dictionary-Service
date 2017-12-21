@@ -31,6 +31,8 @@ public class DictionaryServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append(res);
+		
+		response.sendRedirect("index.jsp?message="+res);
 	}
 
 	/**
@@ -47,7 +49,7 @@ public class DictionaryServlet extends HttpServlet {
 		try {
 			Thread.sleep(10000);					// simulate a wait...?
 			String res = r.getResponse();			// get the response from our thread
-			//out.println(res.toString());
+			//out.println(res.toString());			// checking res (debugging)
 			doGet(request, response, res);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
