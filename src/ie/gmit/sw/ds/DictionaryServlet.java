@@ -47,7 +47,7 @@ public class DictionaryServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();		// for debugging...
 		//out.println(r.hashCode());				// double checking hashcode of thread (debugging)		
 		try {
-			Thread.sleep(10000);					// simulate a wait...?
+			Thread.sleep(1000);					// simulate a wait...?
 			String res = r.getResponse();			// get the response from our thread
 			//out.println(res.toString());			// checking res (debugging)
 			doGet(request, response, res);
