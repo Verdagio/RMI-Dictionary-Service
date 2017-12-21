@@ -1,4 +1,4 @@
-package ie.gmit.sw.ds;
+package ie.gmit.sw;
 
 import java.io.IOException;
 import java.io.PrintWriter;

@@ -1,4 +1,4 @@
-package ie.gmit.sw.ds;
+package ie.gmit.sw;
 
 import java.rmi.Naming;
 import java.util.LinkedList;
@@ -10,15 +10,13 @@ public class InQueue implements Runnable {
 
 	private Queue<String> q;
 	private Queue<String> resQ;
-	private Worker w;
 	private String response;
 
 	public InQueue(String word) {
-		w = new Worker();
 		q = new LinkedList<>();
 		resQ = new LinkedList<>();
 		q.add(word);
-	}
+	} // constuctor
 
 	public void dispatch() {
 		System.out.println("running. . . " + this.hashCode());

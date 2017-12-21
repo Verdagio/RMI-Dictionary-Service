@@ -1,4 +1,4 @@
-package ie.gmit.sw.ds;
+package ie.gmit.sw;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -34,12 +34,12 @@ public class DictionaryServiceImpl extends UnicastRemoteObject implements Dictio
 	}// pop dict
 
 	public String wordSearch(String word) throws RemoteException, IOException {
-		String result = "";											// the result which will be our response
+		String result = "";														// the result which will be our response
 		
 		populateDict();
 		
 		if(dict.containsKey(word.toUpperCase())) {								// check if the dictionary contains our word
-			result = "Word: " + word + "<br>Definition: " + dict.get(word);								// set the response
+			result = "Word: " + word + "<br>Definition: " + dict.get(word);		;// set the response
 		}// if 
 		else {
 			result = "no definition found for " + word + " :(";
