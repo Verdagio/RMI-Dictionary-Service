@@ -50,9 +50,9 @@ public class DictionaryServlet extends HttpServlet {
 		}
 		
 		try {
-			Thread.sleep(10000);									// give the thread time to do its thing
-			String res = r.getResponse();						// get the response from our thread
-			doGet(request, response, res);
+			Thread.sleep(3000);										// give the thread time to do its thing
+			String res = r.getResponse();							// get the response from our thread
+			doGet(request, response, res);							// call the get
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

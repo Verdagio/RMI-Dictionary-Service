@@ -9,12 +9,14 @@ import javax.servlet.http.HttpServletResponse;
 public class InQueue implements Runnable {
 
 	private Queue<String> q;
+	private Queue<String> resQ;
 	private Worker w;
 	private String response;
 
 	public InQueue(String word) {
 		w = new Worker();
 		q = new LinkedList<>();
+		resQ = new LinkedList<>();
 		q.add(word);
 	}
 
@@ -22,12 +24,13 @@ public class InQueue implements Runnable {
 		System.out.println("running. . . " + this.hashCode());
 		try {
 			System.out.println("Please wait. . .");
-			if (q.peek() != null) { // Check that there is actually something in the queue
+			if (q.peek() != null) { 											// Check that there is actually something in the queue
 				System.out.println("Pulling request from Queue. . .");
 				DictionaryService ds = (DictionaryService) Naming.lookup("rmi://127.0.0.1:1099/dictionaryService"); // get remote obj
 				System.out.println("Dispatching job to remote object");
-				this.response = ds.wordSearch(q.poll().toUpperCase()); // get the response
-				System.out.println(response); // checking what the result is here
+				this.response = ds.wordSearch(q.poll().toUpperCase()); 			// get the response
+				resQ.add(response);												// add the response to a que of outgoing responses
+				System.out.println(response); 									// checking what the result is here
 			} else {
 				System.out.println("Que empty... ");
 			} // if else the queue is populated
@@ -39,7 +42,7 @@ public class InQueue implements Runnable {
 	}// dispatch method
 	
 	public String getResponse() {
-		return response;
+		return resQ.poll();
 	}
 
 	public void run() {
