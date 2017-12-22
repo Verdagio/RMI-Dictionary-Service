@@ -22,30 +22,30 @@ public class DictionaryServiceImpl extends UnicastRemoteObject implements Dictio
 	}// construct
 
 	public void populateDict() throws RemoteException, IOException {
-		br = new BufferedReader(new FileReader(file));				// read in the file
+		br = new BufferedReader(new FileReader(file)); // read in the file
 		String line = null;
-		
-		while ((line = br.readLine()) != null) {					// whle the line is not null
-			String[] el = line.split(",");							// split from the ,
-			dict.put(el[0].toUpperCase(), el[1].toUpperCase());		// put the elements into the dictionary key / value
 
-			//System.out.println(line);								// just checking
-		}//while		
+		while ((line = br.readLine()) != null) { // whle the line is not null
+			String[] el = line.split(","); // split from the ,
+			dict.put(el[0].toUpperCase(), el[1].toUpperCase()); // put the elements into the dictionary key / value
+
+			// System.out.println(line); // just checking
+		} // while
 	}// pop dict
 
 	public String wordSearch(String word) throws RemoteException, IOException {
-		String result = "";														// the result which will be our response
-		
+		String result = ""; // the result which will be our response
+
 		populateDict();
-		
-		if(dict.containsKey(word.toUpperCase())) {								// check if the dictionary contains our word
-			result = "Word: " + word + "<br>Definition: " + dict.get(word);		;// set the response
-		}// if 
+
+		if (dict.containsKey(word.toUpperCase())) { // check if the dictionary contains our word
+			result = "Word: " + word + "<br>Definition: " + dict.get(word);
+			;// set the response
+		} // if
 		else {
 			result = "no definition found for " + word + " :(";
 		}
-		return result;			// send the response back to InQueue.dispatch()
+		return result; // send the response back to InQueue.dispatch()
 	}// wordSearch
-	
 
-}//class
+}// class

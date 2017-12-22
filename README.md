@@ -5,11 +5,10 @@
 The follow
 
 
-## Getting started 
+## Running this project 
 
-In order for this project to run as expected you must run both an Apache tomcat 9 server & the "Worker.java" class
 
-Once both are running you can now open up a tab in firefox or chrome and visit 127.0.0.1:8080/DSAssignment
+tbc
 
 ### How it works
 
