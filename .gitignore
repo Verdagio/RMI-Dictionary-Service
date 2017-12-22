@@ -48,5 +48,5 @@ local.properties
 .scala_dependencies
 .worksheet
 
-# ignore build files
-Builds/
+*.jar
+*.war
