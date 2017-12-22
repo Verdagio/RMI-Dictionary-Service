@@ -12,9 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class DictionaryServlet
  */
-@WebServlet("/DictionaryServlet")
+@WebServlet("/ServletPath")
 public class DictionaryServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 777L;
 	private InQueue r = null;
 
 	/**

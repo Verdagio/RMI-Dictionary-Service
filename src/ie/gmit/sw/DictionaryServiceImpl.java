@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class DictionaryServiceImpl extends UnicastRemoteObject implements DictionaryService {
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 666L;
 	private Map<String, String> dict;
 	private BufferedReader br;
 	private File file;

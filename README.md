@@ -2,16 +2,21 @@
 
 4th year Undergraduate project for Distributed systems using Java RMI 
 
-The follow
+## Requirements
 
+To be able to run this project you will need to have the following installed on your machine:
 
-## Running this project 
+ 1. Java
+ 2. Apache Tomcat v9.0
 
+## Running this project
 
-tbc
+Open command line and navigate to the directory where the project is located
 
-### How it works
+in here run ```java -jar dictionary-service.jar```
 
-###### DictionaryService Interface
-The Remote interface serves to identify interfaces whose methods may be invoked from a non-local virtual machine. Any object that is a remote object must directly or indirectly implement this interface. Only those methods specified in a "remote interface", an interface that extends java.rmi.Remote are available remotely.
+next add the job-server.war to the webapps directory of your Apache Tomcat (Built using v9.0) 
 
+start the apache tomcat server
+
+now visit 127.0.0.1:8080/job-server and have at it!
